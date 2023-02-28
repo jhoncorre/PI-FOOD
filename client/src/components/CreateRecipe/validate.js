@@ -1,47 +1,38 @@
 const validate = (input) => {
-  // objeto con los patrones de expresión regular y los mensajes de error correspondientes
-
-  //filtrados = filter((ele)=>(input.name === ele.name))
-  // const filtrado = recipes.filter((ele) => recipes.name === input.name)
-
   const patterns = {
     name: {
       pattern: /^\S[a-zA-Z\s]{1,20}\S$/,
-      errorMessage: "El nombre de tu receta debe ser con letras de A la Z",
+      errorMessage: "Your recipe name should be with letters A to Z",
     },
     healthScore: {
       pattern: /^([1-9][0-9]|100)$/,
-      errorMessage: "El puntaje nutricial debe ser del 10 al 100",
+      errorMessage: "Nutritional score should be 10 to 100",
     },
     image: {
       pattern:
         /(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?.*(png|jpg|jpeg|gif)$/,
       errorMessage:
-        "Debes insertar una imagen con un enlace seguro (https) y formato jpg, jpeg, png o gift",
+        "You must insert an image with a secure link (https) and jpg, jpeg, png or gift format ",
     },
     steps: {
       pattern: /^[a-zA-ZÀ-ÿ0-9\s]{25,500}$/u,
       errorMessage:
-        "Tus pasos solo puede contener numeros del 1 al 10, letras minimo 25 hasta 500 caracteres",
+        "Your steps can only contain numbers from 1 to 10, minimum letters 25 to 500 characters",
     },
     summary: {
       pattern: /^[a-zA-ZÀ-ÿ0-9\s]{25,500}$/u,
       errorMessage:
-        "Tu descripcion solo puede contener numeros del 1 al 10, letras minimo 25 hasta 500 caracteres",
+        "Your description can only contain numbers from 1 to 10, minimum letters 25 to 500 characters",
     },
     diets: {
       pattern: /^.+$/,
       errorMessage:
-        "¡Ups!, por favor agrega a que tipo de dieta se adapta tu receta",
+        "Oops!, please add what type of diet your recipe adapts to",
     },
   };
-
-  // Cobjeto vacío para almacenar los errores de validación
   let errorInput = {};
 
-  // Itera sobre el objeto patterns
   for (const error in patterns) {
-    // Verifica si el campo cumple con el patrón de expresión regular
     if (!patterns[error].pattern.test(input[error])) {
       errorInput[error] = patterns[error].errorMessage;
     }

@@ -4,21 +4,21 @@
   background-attachment: fixed;
   width: 100%;
   background-size: cover;
-  background-repeat: no-repeat; /* Agregar esta propiedad para evitar que se repita la imagen */
+  background-repeat: no-repeat;
   image-rendering: optimizeQuality;
   /*opacity:0.8;*/
 }
 
-.homeConteiner{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 50%;
-}
-.mainHeader{
+.homeConteiner {
   display: flex;
-  
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+}
+.mainHeader {
+  display: flex;
+
   background-color: rgba(0, 0, 0, 0.7);
   flex-direction: column;
 }

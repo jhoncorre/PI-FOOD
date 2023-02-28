@@ -25,8 +25,14 @@ export const Sort = () => {
 
   return (
     <div>
-      <select className={s.selectNav} value={orderOption} onChange={handleOrderChange}>
-        <option disabled selected>Order by</option>
+      <select
+        className={s.selectNav}
+        value={orderOption}
+        onChange={handleOrderChange}
+      >
+        <option disabled selected>
+          Order by
+        </option>
         <option value="max">Health Score: Max to min</option>
         <option value="desc">Health Score: Min to Max</option>
         <option value="A-Z">Name: A to Z</option>

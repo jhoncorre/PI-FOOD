@@ -1,10 +1,9 @@
-.landingBackground{
-background-image: url('https://camo.githubusercontent.com/cf8b9c76fef5eac3cdec06b9f4727005fb4bac00ac60d08829e7c8a15bea49ae/68747470733a2f2f65787465726e616c2d636f6e74656e742e6475636b6475636b676f2e636f6d2f69752f3f753d68747470732533412532462532466361736170726f706961636f6c6f6d6269612e636f6d253246736974657325324664656661756c7425324666696c6573253246323031392d3132253246335f302e6a706726663d31266e6f66623d31');
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-height: 100vh;
-  
+.landingBackground {
+  background-image: url("https://camo.githubusercontent.com/cf8b9c76fef5eac3cdec06b9f4727005fb4bac00ac60d08829e7c8a15bea49ae/68747470733a2f2f65787465726e616c2d636f6e74656e742e6475636b6475636b676f2e636f6d2f69752f3f753d68747470732533412532462532466361736170726f706961636f6c6f6d6269612e636f6d253246736974657325324664656661756c7425324666696c6573253246323031392d3132253246335f302e6a706726663d31266e6f66623d31");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 .landingContainer {
   display: flex;
@@ -15,7 +14,7 @@ height: 100vh;
   height: 50%;
   margin-right: 5%;
 }
-  .titleLanding{
+.titleLanding {
   font-size: 3rem;
   font-weight: bold;
   color: white;
@@ -25,9 +24,8 @@ height: 100vh;
   padding: 0.5rem;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 0.5rem;
-  }
-
-  .buttonLanding{
+}
+.buttonLanding {
   background-color: #4caf50;
   color: white;
   font-size: 2rem;
@@ -36,9 +34,8 @@ height: 100vh;
   border-radius: 0.5rem;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
   cursor: pointer;
-  }
-  
-  .buttonLanding:hover {
-    background-color: #01f32944;
-    box-shadow: 1 10px 25px rgba(0, 0, 0, 0.691);
-  }
+}
+.buttonLanding:hover {
+  background-color: #01f32944;
+  box-shadow: 1 10px 25px rgba(0, 0, 0, 0.691);
+}

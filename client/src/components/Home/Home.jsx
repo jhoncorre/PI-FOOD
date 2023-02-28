@@ -5,23 +5,20 @@ import { FilterBar } from "../FilterNav/FilterBar";
 import { Nav } from "../Nav/Nav";
 import s from "./home.module.css";
 
-
-
 export const Home = (props) => {
   return (
-    <div className={s.homeBackground} >
-      
-      <div className={s.homeConteiner} >
+    <div className={s.homeBackground}>
+      <div className={s.homeConteiner}>
         <Header />
         <div className={s.mainHeader}>
-         
-        <Nav />  {/* este componente ordena */}
-        <FilterBar />{/* este componente filtra */}
+          <Nav /> {}
+          <FilterBar />
+          {}
         </div>
-        <div >
-          <Recipe /> {/* este componente muestra las recetas paginadas */}
+        <div>
+          <Recipe /> {}
         </div>
       </div>
-      </div>
+    </div>
   );
 };

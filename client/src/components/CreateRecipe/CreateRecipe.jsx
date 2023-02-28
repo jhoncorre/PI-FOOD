@@ -5,7 +5,7 @@ import * as actions from "../../Redux/actions";
 import { useHistory } from "react-router-dom";
 import validate from "./validate";
 import { Link } from "react-router-dom";
-import s from "./createRecipe.module.css"
+import s from "./createRecipe.module.css";
 
 export const CreateRecipe = (props) => {
   const dispatch = useDispatch();
@@ -34,7 +34,7 @@ export const CreateRecipe = (props) => {
   useEffect(() => {
     dispatch(actions.getDiets());
   }, [dispatch]);
- const handleCheckChange = (e) => {
+  const handleCheckChange = (e) => {
     if (e.target.checked) {
       setInput({
         ...input,
@@ -52,7 +52,6 @@ export const CreateRecipe = (props) => {
         ...input,
         diets: input.diets.filter((t) => t !== e.target.value),
       });
-
       setErrorInput(
         validate(
           {
@@ -64,16 +63,16 @@ export const CreateRecipe = (props) => {
       );
     }
   };
-const handleChange = (event) => {
+  const handleChange = (event) => {
     setInput({ ...input, [event.target.name]: event.target.value });
     setErrorInput(
       validate({ ...input, [event.target.name]: event.target.value })
     );
   };
-const handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     if (recipes.find((ele) => ele.name === input.name)) {
-      alert("Esta receta ya existe");
+      alert("This recipe already exists");
       return;
     }
     dispatch(actions.postRecipes(input));
@@ -93,19 +92,19 @@ const handleSubmit = (event) => {
   return (
     <div className={s.formContainer}>
       <div className={s.mainForm}>
-        <Link  to="/home">
-          <button className={s.buttonBack}  >Back to home</button>
+        <Link to="/home">
+          <button className={s.buttonBack}>Back to home</button>
         </Link>
 
-        <form  onSubmit={(e) => handleSubmit(e)}>
-          <div >
+        <form onSubmit={(e) => handleSubmit(e)}>
+          <div>
             <label>Name:</label>
             {errorInput.name ? <span>{errorInput.name}</span> : <span></span>}
 
             <input
               type="text"
               name="name"
-              placeholder="Escribe el nombre de tu receta.."
+              placeholder="Enter the name of your recipe.."
               value={input.name}
               onChange={(e) => handleChange(e)}
             />
@@ -119,7 +118,7 @@ const handleSubmit = (event) => {
             <textarea
               type="text"
               name="summary"
-              placeholder="Descripcion de tu receta"
+              placeholder="Description of your recipe"
               value={input.summary}
               onChange={(e) => handleChange(e)}
             />
@@ -133,7 +132,7 @@ const handleSubmit = (event) => {
             <input
               type="number"
               name="healthScore"
-              placeholder="¿Que puntaje nutricional posee?"
+              placeholder="What nutritional score does it have?"
               value={input.healthScore}
               onChange={(e) => handleChange(e)}
             />
@@ -142,7 +141,7 @@ const handleSubmit = (event) => {
             <input
               type="text"
               name="image"
-              placeholder="Por favor un enlace con la foto de tu receta"
+              placeholder="Please a link to your recipe photo"
               value={input.image}
               onChange={(e) => handleChange(e)}
             />
@@ -152,58 +151,47 @@ const handleSubmit = (event) => {
             <textarea
               type="text"
               name="steps"
-              placeholder="Pasos para realizar la receta"
+              placeholder="Steps to make the recipe"
               value={input.steps}
               onChange={(e) => handleChange(e)}
             />
 
-            <div >
+            <div>
               <label>Types of Diets:</label>
               {dietas?.map((diet) => {
                 return (
                   <div key={diet.name}>
                     <input
-                      
                       type="checkbox"
                       id={diet.id}
                       value={diet.name}
                       onChange={handleCheckChange}
                     />
-                    <label htmlFor={diet.id} >
-                      {diet.name}
-                    </label>
+                    <label htmlFor={diet.id}>{diet.name}</label>
                   </div>
                 );
               })}
               {errorInput.diets ? (
-                <span >{errorInput.diets}</span>
+                <span>{errorInput.diets}</span>
               ) : (
                 <span></span>
               )}
             </div>
             {!Object.entries(errorInput).length ? (
-              <button  type="submit">
-                Create Recipe
-              </button>
+              <button type="submit">Create Recipe</button>
             ) : (
               <div>
-                <button  type="submit" disabled={!enable}>
+                <button type="submit" disabled={!enable}>
                   Create Recipe
                 </button>
-                <span >
-                  {" "}
-                  Incomplete required fields
-                </span>
+                <span> Incomplete required fields</span>
               </div>
             )}
           </div>
 
-          <div >
-          </div>
+          <div></div>
         </form>
       </div>
     </div>
   );
 };
-
-
