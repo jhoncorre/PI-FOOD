@@ -1,8 +1,6 @@
 const { createDiet } = require("../controllers/dietsControllers");
 const router = require("express").Router();
 
-
-///GET trae todas las dietas
 router.get("/", async (req, res) => {
   try {
     const allDiets = await createDiet();
