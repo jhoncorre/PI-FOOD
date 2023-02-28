@@ -7,8 +7,6 @@ import validate from "./validate";
 import { Link } from "react-router-dom";
 import s from "./createRecipe.module.css"
 
-
-
 export const CreateRecipe = (props) => {
   const dispatch = useDispatch();
   const recipes = useSelector((state) => state.recipes);
@@ -36,9 +34,7 @@ export const CreateRecipe = (props) => {
   useEffect(() => {
     dispatch(actions.getDiets());
   }, [dispatch]);
-
-  ///"handleCheckChange" se utiliza para manejar el cambio de estado de los campos de tipo checkbox que seleccionan las dietas de la receta. Actualiza el estado de "input" y "errorInput" con la nueva información.
-  const handleCheckChange = (e) => {
+ const handleCheckChange = (e) => {
     if (e.target.checked) {
       setInput({
         ...input,
@@ -68,23 +64,18 @@ export const CreateRecipe = (props) => {
       );
     }
   };
-
-  ///"handleChange" se utiliza para manejar el cambio de estado de los demás campos de "input". Actualiza el estado de "input" y "errorInput" con la nueva información.
-  const handleChange = (event) => {
+const handleChange = (event) => {
     setInput({ ...input, [event.target.name]: event.target.value });
     setErrorInput(
       validate({ ...input, [event.target.name]: event.target.value })
     );
   };
-
-  ///"handleSubmit" se utiliza para manejar el envío del formulario. Valida la información de "input" y, si es válida, envía una acción de "postRecipes" al almacenamiento de Redux y navega a la página principal.
-  const handleSubmit = (event) => {
+const handleSubmit = (event) => {
     event.preventDefault();
     if (recipes.find((ele) => ele.name === input.name)) {
       alert("Esta receta ya existe");
       return;
     }
-
     dispatch(actions.postRecipes(input));
     setInput({
       ...input,
