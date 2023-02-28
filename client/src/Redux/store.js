@@ -7,10 +7,8 @@ const composeEnhancers =
   (typeof window !== "undefined" &&
     window._REDUX_DEVTOOLS_EXTENSION_COMPOSE_) ||
   compose;
-
 const store = createStore(
   rootReducer,
   composeEnhancers(applyMiddleware(thunk))
 );
-
 export default store;

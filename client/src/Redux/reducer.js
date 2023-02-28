@@ -21,7 +21,6 @@ const initialState = {
   recipeCopy: [],
   hamburguer: false,
 };
-
 function rootReducer(state = initialState, action) {
   switch (action.type) {
     case GET_RECIPES:
@@ -31,32 +30,23 @@ function rootReducer(state = initialState, action) {
         recipeCopy: action.payload,
         searchRecipe: action.payload,
       };
-    
     case SEARCH_NAME:
       return {
         ...state,
         recipes: action.payload,
         currentPage: 1,
       };
-   
-
-    case GET_DIETS:
+   case GET_DIETS:
       return {
         ...state,
         dietas: action.payload,
       };
-
-   
-
-    case FILTER_DIETS:
+   case FILTER_DIETS:
       return {
         ...state,
         recipes: [...action.payload],
       };
-
-    //La función localeCompare() se utiliza para comparar dos strings en JavaScript y devuelve un valor numérico que indica si el string que se está comparando es mayor (-1), menor (1) o igual (0) al string con el que se está comparando. En este caso, estamos utilizando el valor de retorno de localeCompare() para determinar el orden en el que deben aparecer los elementos en la lista.////////////////////////////////
-
-    case ORDER_BY_LETTER:
+   case ORDER_BY_LETTER:
       const allRecipe = [...state.recipes];
       const sortedLetter = allRecipe.sort((a, b) => {
         if (action.payload === "A-Z") {
@@ -70,47 +60,37 @@ function rootReducer(state = initialState, action) {
         recipes: sortedLetter,
         currentPage: 2,
       };
-
-    case HEALTH_SCORE:
-      let allRecipes = [...state.recipes]; // hacer una copia del array de recetas
-      let orderByHs; // Declarar una variable para almacenar la array ordenada
+   case HEALTH_SCORE:
+      let allRecipes = [...state.recipes]; 
+      let orderByHs; 
       if (action.payload === "max") {
-        // si el payload is "max", ordene la array en orden descendente
         orderByHs = allRecipes.sort((a, b) => b.healthScore - a.healthScore);
       } else {
-        // si el payload no es "max", ordene la array en orden ascendente
         orderByHs = allRecipes.sort((a, b) => a.healthScore - b.healthScore);
       }
       return {
         ...state,
-        recipes: orderByHs, //actualice la array de recetas con la array ordenada
-        currentPage: 2, // actualice a la pagina 2
+        recipes: orderByHs, 
+        currentPage: 2, 
       };
-    
-
-    case CHANGE_PAGE:
+   case CHANGE_PAGE:
       return {
         ...state,
         currentPage: action.payload,
       };
-
-   //este es del paginado nuevo!!
-    case SET_PAGES: {
+   case SET_PAGES: {
       return {
         ...state,
         currentPage: action.payload,
       };
     }
-  
-    case RECIPE_ID:
+   case RECIPE_ID:
       return {
         ...state,
         recipeId: action.payload,
       };
-   
-    default:
+   default:
       return { ...state };
   }
 }
-
 export default rootReducer;
