@@ -1,7 +1,9 @@
 import React from "react";
+// Función que recarga la página
 const handleClick = () => {
   window.location.reload();
 };
+// Componente que muestra un mensaje y un botón
 export const Empty = () => {
   return (
     <div>
