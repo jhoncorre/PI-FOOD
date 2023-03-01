@@ -6,10 +6,33 @@
   background-attachment: fixed;
   min-height: 100vh;
   opacity: 0.8;
+  width: 100%;
+  position:absolute;
+  padding-left: 43%;
+}
+.diets{
+  display: flex ;
+  gap: 5rem;
+  background-color: rgba(255, 255, 255, 0.755);
+  border-radius: 8px;
+  justify-content: center;
+  padding:15px 0 15px 50px;
+
+}
+.buttonCreate {
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  margin-left: -84%;
+  }
+.buttonCreate span {
+  color: red;
+  font-size: 20px;
 }
 .formContainer button[type="submit"],
 .buttonBack {
-  background-color: #4f514f;
+  background-color: #da0d0d;
   border: none;
   border-radius: 0.5rem;
   margin: 1rem 0;
@@ -50,4 +73,16 @@
 .formContainer select:focus {
   outline: none;
   border-bottom: 2px solid #4f514f;
+}
+.inputs{
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.mainForm label {
+  font-size: 25px;
+  font-weight: 800;
+  
 }

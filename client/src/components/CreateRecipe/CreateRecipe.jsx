@@ -97,7 +97,7 @@ export const CreateRecipe = (props) => {
         </Link>
 
         <form onSubmit={(e) => handleSubmit(e)}>
-          <div>
+          <div className={s.inputs}>
             <label>Name:</label>
             {errorInput.name ? <span>{errorInput.name}</span> : <span></span>}
 
@@ -156,7 +156,7 @@ export const CreateRecipe = (props) => {
               onChange={(e) => handleChange(e)}
             />
 
-            <div>
+            <div className={s.diets}>
               <label>Types of Diets:</label>
               {dietas?.map((diet) => {
                 return (
@@ -177,19 +177,21 @@ export const CreateRecipe = (props) => {
                 <span></span>
               )}
             </div>
-            {!Object.entries(errorInput).length ? (
+            
+          </div>
+          
+          {!Object.entries(errorInput).length ? (
               <button type="submit">Create Recipe</button>
             ) : (
-              <div>
+              <div className={s.buttonCreate}>
                 <button type="submit" disabled={!enable}>
                   Create Recipe
                 </button>
                 <span> Incomplete required fields</span>
               </div>
             )}
-          </div>
-
-          <div></div>
+          
+          
         </form>
       </div>
     </div>
