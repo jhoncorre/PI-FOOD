@@ -10,7 +10,7 @@
 }
 .buttonLimpiar {
   margin-top: 20px;
-  background-color: #4caf50;
+  background-color: #4f514f;
   color: white;
   font-size: 1.1rem;
   border: none;
@@ -20,6 +20,6 @@
 }
 
 .buttonLimpiar:hover {
-  background-color: #01f32944;
+  background-color: #d6e0d6;
   box-shadow: 1 10px 25px rgba(0, 0, 0, 0.691);
 }

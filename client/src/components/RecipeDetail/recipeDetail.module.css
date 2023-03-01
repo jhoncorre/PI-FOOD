@@ -21,7 +21,7 @@
 .backButton button {
   font-size: 1.2rem;
   color: #fff;
-  background-color: #4caf50;
+  background-color: #4f514f;
   border: none;
   border-radius: 0.5rem;
   padding: 0.6rem 1rem;
@@ -29,7 +29,7 @@
   transition: all 0.3s ease;
 }
 .backButton button:hover {
-  background-color: #3e8e41;
+  background-color: #6f736f;
 }
 .titleDetail {
   font-size: 3rem;

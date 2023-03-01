@@ -8,7 +8,7 @@
 .pageButton {
   font-size: 1.2rem;
   color: #fff;
-  background-color: #4caf50;
+  background-color: #4f514f;
   border: none;
   border-radius: 0.5rem;
   padding: 0.6rem 1rem;
@@ -17,7 +17,7 @@
   margin: 0 0.5rem;
 }
 .pageButton:hover {
-  background-color: #3e8e41;
+  background-color: #d6e0d6;
 }
 .currentPage {
   font-size: 1.2rem;

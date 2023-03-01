@@ -26,7 +26,7 @@
   border-radius: 0.5rem;
 }
 .buttonLanding {
-  background-color: #4caf50;
+  background-color: #4f514f;
   color: white;
   font-size: 2rem;
   padding: 0.5rem 1.5rem;
@@ -36,6 +36,6 @@
   cursor: pointer;
 }
 .buttonLanding:hover {
-  background-color: #01f32944;
+  background-color: #888d8944;
   box-shadow: 1 10px 25px rgba(0, 0, 0, 0.691);
 }

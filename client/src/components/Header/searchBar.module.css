@@ -6,17 +6,17 @@
   min-height: 50px;
   max-width: 150px;
   padding: 0 1rem;
-  color: #eef3ee;
+  color: #0c1c0c;
   font-size: 15px;
-  border: 1px solid #4caf50;
+  border: 1px solid #4f514f;
   border-radius: 6px 0 0 6px;
   background-color: rgba(238, 221, 221, 0.19);
 }
 .inputSearch::placeholder{
-  color: white;
+  color: rgb(143, 125, 125);
 }
 .buttonSearch{
-  background-color: #4caf50;
+  background-color: #4f514f;
   color: white;
   min-height: 50px;
   padding: 0 1rem;
